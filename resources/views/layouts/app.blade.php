@@ -32,7 +32,7 @@
 <body>
     <div id="app">
         <!--Navbar -->
-        <nav class="mb-1 navbar navbar-expand-lg navbar-light blue-grey lighten-5" id="navbar-example">
+        <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5" id="navbar-example">
             <a class="navbar-brand" href="/">
                 <img src="{{ '/img/logo2.png' }}" height="30" alt="logo">
             </a>
@@ -42,7 +42,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
-
+                    <li class="nav-item"><h5>ABC Casas Prefabricadas</h5></li>
                 </ul>
                 <ul class="navbar-nav ml-auto nav-flex-icons smooth-scroll">
                     <li class="nav-item active">

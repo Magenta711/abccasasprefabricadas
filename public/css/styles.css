@@ -11,3 +11,19 @@
     width:100%;
     position:absolute;
   }
+
+  .bg-pablo {
+    background-color: #c4c4c4c4;
+  }
+
+  .rojo-text {
+    color: #da2017;
+  }
+
+  .rojoc-text {
+    color: #fa6351;
+  }
+
+  .navbar.navbar-light .breadcrumb .nav-item .nav-link:hover, .navbar.navbar-light .navbar-nav .nav-item .nav-link:focus {
+    color: #da2017;
+  }

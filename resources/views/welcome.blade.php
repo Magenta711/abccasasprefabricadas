@@ -14,7 +14,7 @@
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
                 <div class="view">
-                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).webp"
+                    <img class="d-block w-100" src="{{ asset('img/slider/805.jpg') }}"
                         alt="First slide">
                     <div class="mask rgba-black-light"></div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="carousel-item">
                 <!--Mask color-->
                 <div class="view">
-                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).webp"
+                    <img class="d-block w-100" src="{{ asset('img/slider/806.jpg') }}"
                         alt="Second slide">
                     <div class="mask rgba-black-strong"></div>
                 </div>
@@ -38,7 +38,7 @@
             <div class="carousel-item">
                 <!--Mask color-->
                 <div class="view">
-                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).webp"
+                    <img class="d-block w-100" src="{{ asset('img/slider/807.jpg') }}"
                         alt="Third slide">
                     <div class="mask rgba-black-slight"></div>
                 </div>
@@ -67,7 +67,7 @@
         {{-- Section: about --}}
         <section id="about" class="my-5">
 
-            <h3 class="h3 text-center mb-5">Lo que hacemos</h3>
+            <h3 class="h3 text-center mb-5 rojo-text">¿QUIENES SOMOS?</h3>
 
             <!--Grid row-->
             <div class="row wow fadeIn">
@@ -78,12 +78,12 @@
                     <!--First row-->
                     <div class="row">
                         <div class="col-1 mr-3">
-                            <i class="fas fa-code fa-2x indigo-text"></i>
+                            <i class="fas fa-users fa-2x rojo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h5 class="feature-title">Atención Personal</h5>
+                            <h5 class="feature-title rojoc-text">Atención Personal</h5>
                             <p class="grey-text">Contamos con un personal altamente capacitado, que trabajan
-                                continuamente para ofrecerle la mejor solución que se adapte a sus necesidades.</p>
+                                continuamente para ofrecerle la mejor solución que se adapte a sus necesidades</p>
                         </div>
                     </div>
                     <!--/First row-->
@@ -93,14 +93,13 @@
                     <!--Second row-->
                     <div class="row">
                         <div class="col-1 mr-3">
-                            <i class="fas fa-book fa-2x blue-text"></i>
+                            <i class="fas fa-pen fa-2x rojo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h5 class="feature-title">Diseño y Productividad</h5>
+                            <h5 class="feature-title rojoc-text">Diseño y Productividad</h5>
                             <p class="grey-text">Construimos su casa prefabricada con la máxima calidad y seguridad.
-                                A.B.C. Casas Prefabricadas cuenta con amplia capacidad de fabricación para pequeños y
-                                grandes proyectos.
-                            </p>
+                                A.B.C Casas Prefabricadas cuenta con una amplia capacidad de fabricación para pequeños y grandes proyectos.
+                                Además nos caracterizamos por ofrecer la mayor eficiencia para entregarle su casa en el menor tiempo posible                            </p>
                         </div>
                     </div>
                     <!--/Second row-->
@@ -110,12 +109,11 @@
                     <!--Third row-->
                     <div class="row">
                         <div class="col-1 mr-3">
-                            <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
+                            <i class="fas fa-home fa-2x rojo-text"></i>
                         </div>
                         <div class="col-10">
-                            <h5 class="feature-title">Calidad y Experiencia</h5>
-                            <p class="grey-text">A.B.C. Casas Prefabricadas cuenta con Experiencia de más de 15 años a
-                                su servicios.</p>
+                            <h5 class="feature-title rojoc-text">Calidad y Experiencia</h5>
+                            <p class="grey-text">A.B.C. Casas Prefabricadas cuenta con una experiencia de más de 15 años construyendo los mejores hogares.</p>
                         </div>
                     </div>
                     <!--/Third row-->
@@ -126,11 +124,12 @@
                 <!--Grid column-->
                 <div class="col-lg-6 col-md-12">
 
-                    <p class="h5 text-center mb-4">Watch our "5 min Quick Start" tutorial</p>
+                    <p class="h5 text-center mb-4 rojo-text">A.B.C CASAS PREFABRICADAS</p>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ"
+                        <iframe class="embed-responsive-item" src="https://vimeo.com/234963159?embedded=true&amp;source=video_title&amp;owner=71302726"
                             allowfullscreen=""></iframe>
                     </div>
+                    
                 </div>
                 <!--/Grid column-->
 
@@ -148,17 +147,13 @@
             <!--Grid column-->
             <div class="col-md-12">
                 <div class="card card-image"
-                    style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/img%20%2832%29.webp);">
+                    style="background-image: url({{asset('/img/slider/807.jpg')}}); background-size: cover; background-repeat: no-repeat;">
                     <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                         <div>
-                            <h6 class="purple-text"><i class="fas fa-plane"></i><strong> Travel</strong></h6>
-                            <h3 class="card-title py-3 font-weight-bold"><strong>This is the card title</strong></h3>
-                            <p class="pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
-                                fugiat, laboriosam, voluptatem,
-                                optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
-                                dignissimos.
-                                Odit sed qui, dolorum!</p>
-                            <a class="btn btn-secondary btn-rounded"><i class="far fa-clone left"></i> View project</a>
+                            <h5 class="dark-text"><i class="fas fa-house-chimney"></i><strong> Creamos tu hogar ideal</strong></h6>
+                            <h3 class="card-title py-3 font-weight-bold rojo-text"><strong>"Brindamos bienestar y calidad a nuestros clientes más allá de sus expectativas"</strong></h3>
+                            <p class="pb-3">Nuestras casas nos acreditan como los mejores en la construcción modular del sector. Diseños únicos al igual de hermosos, cada una de nuestras casas está pensada para que se acomoden a las necesidades y exigencias de nuestros clientes. </p>
+                            <a class="btn btn-outline-white btn-rounded "><i class="far fa-clone left"></i> MIRA NUESTRA GALERÍA</a>
                         </div>
                     </div>
                 </div>
@@ -177,12 +172,15 @@
         <!--Section: Contact v.2-->
         <section class="mb-4">
 
+        <div class="mt-5 text-center"">
+            <img  src="{{ asset('img/logo.png') }}" alt="">
+        </div>
+
             <!--Section heading-->
-            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+            <h2 class="h1-responsive font-weight-bold text-center my-4 rojo-text">Contáctanos</h2>
             <!--Section description-->
-            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us
-                directly. Our team will come back to you within
-                a matter of hours to help you.</p>
+            <p class="text-center w-responsive mx-auto mb-5">¿Tienes alguna duda, quieres cotizar tu nuevo hogar o solo necesitas más infomarción? Por favor no dudes en contactarnos,
+                te daremos una oportuna y la mejor atención posible.</p>
 
             <div class="row">
 
@@ -251,18 +249,18 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center ">
                     <ul class="list-unstyled mb-0">
-                        <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                            <p>San Francisco, CA 94126, USA</p>
+                        <li><i class="fas fa-map-marker-alt fa-2x rojo-text"></i>
+                            <p>Medellín, Cl. 62d #110-188</p>
                         </li>
 
-                        <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                            <p>+ 01 234 567 89</p>
+                        <li><i class="fas fa-phone mt-4 fa-2x rojo-text"></i>
+                            <p>+57 3113395710</p>
                         </li>
 
-                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                            <p>contact@mdbootstrap.com</p>
+                        <li><i class="fas fa-envelope mt-4 fa-2x rojo-text"></i>
+                            <p>abccasasprefabricadas@outlook.es</p>
                         </li>
                     </ul>
                 </div>
