@@ -34,7 +34,7 @@
         <!--Navbar -->
         <nav class="mb-1 navbar navbar-expand-lg navbar-light blue-grey lighten-5" id="navbar-example">
             <a class="navbar-brand" href="/">
-                <img src="{{ '/img/logo.png' }}" height="30" alt="logo">
+                <img src="{{ '/img/logo2.png' }}" height="30" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
