@@ -11,3 +11,20 @@
     width:100%;
     position:absolute;
   }
+
+  .md-pills .nav-link.active, .md-pills .show>.nav-link {
+    color: #fff;
+    background-color: #007bff;
+  }
+  .pills-danger .nav-link.active, .md-pills .show>.nav-link {
+    color: #fff !important;
+    background-color: #da2017 !important;
+    transition: background-color 4s linear;
+  }
+  .pills-danger .nav-link:hover {
+    color: #fff !important;
+    background-color: #da2017 !important;
+  }
+  .pills-danger .nav-link {
+    color: #da2017 !important;
+  }
