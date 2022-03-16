@@ -12,21 +12,15 @@
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2">
                 <ul class="nav md-pills pills-danger">
-                    <li class="nav-item w-100">
-                        <a class="nav-link active" data-toggle="tab" href="#panel11" role="tab">Casas Especiales</a>
-                    </li>
-                    <li class="nav-item w-100">
-                        <a class="nav-link" data-toggle="tab" href="#panel12" role="tab">Un nivel</a>
-                    </li>
-                    <li class="nav-item w-100">
-                        <a class="nav-link" data-toggle="tab" href="#panel13" role="tab">Dos niveles</a>
-                    </li>
-                    <li class="nav-item w-100">
-                        <a class="nav-link" data-toggle="tab" href="#panel14" role="tab">Terrazas</a>
-                    </li>
-                    <li class="nav-item w-100">
-                        <a class="nav-link" data-toggle="tab" href="#panel14" role="tab">Casetas</a>
-                    </li>
+                    @php
+                        $i = 1;
+                    @endphp
+                    @foreach ($projects as $item)
+                        <li class="nav-item w-100">
+                            <a class="nav-link {{ $i++ == 1 ? 'active' : '' }}" data-toggle="tab"
+                                href="#panel-{{ $item->id }}" role="tab">{{ $item->name_project }}</a>
+                        </li>
+                    @endforeach
                     <li class="nav-item w-100">
                         <a class="nav-link" data-toggle="modal" data-target="#modalProjectForm" role="tab"><i
                                 class="fas fa-plus"></i> Crear proyecto</a>
@@ -36,311 +30,100 @@
             <div class="col-md-9 col-lg-8 ml-xl-0 ml-4">
                 <!-- Tab panels -->
                 <div class="tab-content pt-0">
-
-                    <!--Panel 1-->
-                    <div class="tab-pane fade in show active" id="panel11" role="tabpanel">
-                        <div class="md-form input-group mb-4">
-                            <input type="text" id="name-project" class="form-control" value="Casas Especiales">
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Nombre del
-                                proyecto</label>
-                            <div class="input-group-append d-none">
-                                <button class="btn btn-md btn-secondary m-0 px-3" type="button"
-                                    id="btn-update-name-project">Gardar</button>
+                    @php
+                        $i = 1;
+                    @endphp
+                    @foreach ($projects as $item)
+                        <!--Panel 1-->
+                        <div class="tab-pane fade in {{ $i++ == 1 ? 'show active' : '' }}" id="panel-{{ $item->id }}"
+                            role="tabpanel">
+                            <form class="update-project" data-id="{{$item->id}}">
+                                @csrf
+                                @method('PUT')
+                                <div class="md-form input-group mb-4">
+                                    <input type="text" class="form-control name-project" name="name_project"
+                                        value="{{ $item->name_project }}">
+                                    <label data-error="wrong" data-success="right" for="defaultForm-pass">
+                                        Nombre del proyecto
+                                    </label>
+                                    <div class="input-group-append d-none">
+                                        <button
+                                            class="btn btn-md btn-secondary btn-update-name-project m-0 px-3">Gardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card text-white bg-secondary h-100" data-toggle="modal"
+                                        data-target="#modalCreateProcjet">
+                                        <div class="card-body d-flex align-items-center justify-content-center">
+                                            <div>
+                                                <i class="fas fa-plus fa-2x"
+                                                    style="font-weight: bolder;margin-bottom:0px;font-size:4rem"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="view overlay zoom">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
+                                            class="img-fluid " alt="smaple image">
+                                        <div class="mask flex-center rgba-red-slight">
+                                            <button class="btn btn-outline-danger btn-rounded waves-effect px-3"
+                                                data-toggle="modal" data-target="#modalLoginForm">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="view overlay zoom">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
+                                            class="img-fluid " alt="smaple image">
+                                        <div class="mask flex-center rgba-red-slight">
+                                            <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="view overlay zoom">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
+                                            class="img-fluid " alt="smaple image">
+                                        <div class="mask flex-center rgba-red-slight">
+                                            <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="view overlay zoom">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
+                                            class="img-fluid " alt="smaple image">
+                                        <div class="mask flex-center rgba-red-slight">
+                                            <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="view overlay zoom">
+                                        <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
+                                            class="img-fluid " alt="smaple image">
+                                        <div class="mask flex-center rgba-red-slight">
+                                            <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3"
-                                            data-toggle="modal" data-target="#modalLoginForm">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    @endforeach
                     <!--/.Panel 1-->
-
-                    <!--Panel 2-->
-                    <div class="tab-pane fade" id="panel12" role="tabpanel">
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/.Panel 2-->
-
-                    <!--Panel 3-->
-                    <div class="tab-pane fade" id="panel13" role="tabpanel">
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.Panel 3-->
-
-                    <!--Panel 4-->
-                    <div class="tab-pane fade" id="panel14" role="tabpanel">
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <div class="view overlay zoom">
-                                    <img src="https://mdbootstrap.com/img/Photos/Others/forest-sm.webp"
-                                        class="img-fluid " alt="smaple image">
-                                    <div class="mask flex-center rgba-red-slight">
-                                        <button class="btn btn-outline-danger btn-rounded waves-effect px-3">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.Panel 4-->
-
                 </div>
             </div>
         </div>
@@ -372,6 +155,31 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="modalCreateProcjet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Crear</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="create-image">
+                    <div class="modal-body mx-3 mb-5">
+                        <div class="md-form mb-5">
+                            <label for="defaultForm-email" class="form-control text-center" style="cursor: pointer"><i
+                                    class="fas fa-upload"></i></label>
+                            <input type="file" id="defaultForm-email" accept="image/*" class="d-none validate">
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-default">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     {{-- Fin Modal de Editar Foto --}}
 
     {{-- Modal de Editar Foto --}}
@@ -385,16 +193,19 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body mx-3 mb-5">
-                    <div class="md-form mb-4">
-                        <i class="fas fa-pen prefix grey-text"></i>
-                        <input type="text" id="defaultForm-pass" class="form-control validate">
-                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Nombre del proyecto</label>
+                <form id="create-project">
+                    <div class="modal-body mx-3 mb-5">
+                        <div class="md-form mb-4">
+                            <i class="fas fa-pen prefix grey-text"></i>
+                            <input type="text" name="name_project" id="name_project" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="name_project">Nombre del
+                                proyecto</label>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-default">Guardar</button>
-                </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-default">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -403,9 +214,90 @@
 
 @section('js')
     <script>
-        $(document).ready(function () {
-            $('#name-project').focus(function () {
-                $('#btn-update-name-project').parent().removeClass('d-none');
+        $(document).ready(function() {
+            $('.name-project').focus(function() {
+                $(this).siblings('.input-group-append').removeClass('d-none');
+                // $('.btn-update-name-project').parent().removeClass('d-none');
+            });
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $("#create-project").submit(function(e) {
+                e.preventDefault();
+                let form = $("#create-project")[0];
+                let data = new FormData(form);
+                $.ajax({
+                    url: '/api/project',
+                    method: 'POST',
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 1000000,
+                    // beforeSend: function() {
+
+                    // },
+                    success: function(data) {
+
+                    },
+                    error: function(error) {
+                        console.error('ERROR: ', error);
+                    }
+                });
+            });
+
+            $(".update-project").submit(function(e) {
+                e.preventDefault();
+                let form = $(this)[0];
+                let data = new FormData(form);
+                let id = $(this).data('id');
+                $.ajax({
+                    url: '/api/project/'+id,
+                    method: 'POST',
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 1000000,
+                    // beforeSend: function() {
+
+                    // },
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(error) {
+                        console.error('ERROR: ', error);
+                    }
+                });
+            });
+            $("#create-image").submit(function(e) {
+                e.preventDefault();
+                let form = $(this)[0];
+                let data = new FormData(form);
+                let id = $(this).data('id');
+                // $.ajax({
+                //     url: '/api/project/'+id,
+                //     method: 'POST',
+                //     enctype: 'multipart/form-data',
+                //     data: data,
+                //     processData: false,
+                //     contentType: false,
+                //     cache: false,
+                //     timeout: 1000000,
+                //     // beforeSend: function() {
+
+                //     // },
+                //     success: function(data) {
+                //         console.log(data);
+                //     },
+                //     error: function(error) {
+                //         console.error('ERROR: ', error);
+                //     }
+                // });
             });
         })
     </script>

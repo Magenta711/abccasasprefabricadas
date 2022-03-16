@@ -6,6 +6,7 @@ use App\Models\Inventario;
 use App\Models\Motor;
 use App\User;
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class HomeController extends Controller
 {
@@ -28,15 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-
-    public function notification_read($id)
-    {
-        foreach (auth()->user()->unreadNotifications as $notification) {
-            if ($notification->id == $id){
-                $notification->markAsRead();
-            }
-        }
+        $projects = Project::get();
+        return view('home',compact('projects'));
     }
 }
