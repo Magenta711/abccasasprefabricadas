@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Gallery;
+use Illuminate\Support\Facades\Storage;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,9 +35,19 @@ Route::put('/project/{id}', function (Request $request, Project $id) {
     ]);
 });
 
-Route::post('/project/{id}/gallery', function (Request $request, Project $id) {
+Route::post('/project/{id}/gallery', function (Request $request, $id) {
+    if ($request->hasFile('file')) {
+        $file = $request->file('file');
+        $name = time().str_random().'.'.$file->getClientOriginalExtension();
+        $path = Storage::putFileAs('public/upload/files', $file, $name);
+        $gallery = Gallery::create(['file' => $name,'project_id' => $id]);
+        return response()->json([
+            'status' => 200,
+            'image' => $gallery
+        ]);
+    }
     return response()->json([
-        'status' => 200,
-        'project' => $id
+        'status' => 500,
+        'message' => 'Debe adjuntar una imagen'
     ]);
 });

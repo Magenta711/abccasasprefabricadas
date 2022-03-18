@@ -37,7 +37,7 @@
                         <!--Panel 1-->
                         <div class="tab-pane fade in {{ $i++ == 1 ? 'show active' : '' }}" id="panel-{{ $item->id }}"
                             role="tabpanel">
-                            <form class="update-project" data-id="{{$item->id}}">
+                            <form class="update-project" data-id="{{ $item->id }}">
                                 @csrf
                                 @method('PUT')
                                 <div class="md-form input-group mb-4">
@@ -52,10 +52,10 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="row">
+                            <div class="row" id="list-images-{{ $item->id }}">
                                 <div class="col-md-4 mb-4">
                                     <div class="card text-white bg-secondary h-100" data-toggle="modal"
-                                        data-target="#modalCreateProcjet">
+                                        data-target="#modal_create_image">
                                         <div class="card-body d-flex align-items-center justify-content-center">
                                             <div>
                                                 <i class="fas fa-plus fa-2x"
@@ -155,7 +155,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modalCreateProcjet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <div class="modal fade" id="modal_create_image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -166,11 +166,15 @@
                     </button>
                 </div>
                 <form id="create-image">
+
                     <div class="modal-body mx-3 mb-5">
+                        <picture>
+                            <img class="img-fluid img-thumbnail" id="cr-img-preview">
+                        </picture>
                         <div class="md-form mb-5">
-                            <label for="defaultForm-email" class="form-control text-center" style="cursor: pointer"><i
+                            <label for="cr-file" class="form-control text-center" style="cursor: pointer"><i
                                     class="fas fa-upload"></i></label>
-                            <input type="file" id="defaultForm-email" accept="image/*" class="d-none validate">
+                            <input type="file" accept="image/*" class="d-none validate" name="file" id="cr-file">
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
@@ -220,6 +224,21 @@
                 // $('.btn-update-name-project').parent().removeClass('d-none');
             });
 
+            $('#cr-file').change(function() {
+                $(this).parent().children('label').addClass('text-primary');
+                readImage(this);
+            });
+
+            function readImage(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#cr-img-preview').attr('src', e.target.result); // Renderizamos la imagen
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -256,7 +275,7 @@
                 let data = new FormData(form);
                 let id = $(this).data('id');
                 $.ajax({
-                    url: '/api/project/'+id,
+                    url: '/api/project/' + id,
                     method: 'POST',
                     data: data,
                     processData: false,
@@ -278,27 +297,46 @@
                 e.preventDefault();
                 let form = $(this)[0];
                 let data = new FormData(form);
-                let id = $(this).data('id');
-                // $.ajax({
-                //     url: '/api/project/'+id,
-                //     method: 'POST',
-                //     enctype: 'multipart/form-data',
-                //     data: data,
-                //     processData: false,
-                //     contentType: false,
-                //     cache: false,
-                //     timeout: 1000000,
-                //     // beforeSend: function() {
+                let id = $($('.nav-link.active')[0]).attr('href').split('-').pop();
 
-                //     // },
-                //     success: function(data) {
-                //         console.log(data);
-                //     },
-                //     error: function(error) {
-                //         console.error('ERROR: ', error);
-                //     }
-                // });
+                $.ajax({
+                    url: `/api/project/${id}/gallery`,
+                    method: 'POST',
+                    enctype: 'multipart/form-data',
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 1000000,
+                    // beforeSend: function() {
+
+                    // },
+                    success: function(data) {
+                        console.log(data);
+                        $('#modal_create_image').modal('hide');
+                        $('#list-images-'+id).append(generateImageCard(data.image.id, data.image.file));
+                    },
+                    error: function(error) {
+                        console.error('ERROR: ', error);
+                    }
+                });
             });
+
+            function generateImageCard(id,nameFile) {
+                let url = '/storage/upload/files/'+nameFile;
+                return `<div class="col-md-4 mb-4">
+                    <div class="view overlay zoom">
+                        <img src="${url}"
+                            class="img-fluid " alt="smaple image">
+                        <div class="mask flex-center rgba-red-slight">
+                            <button class="btn btn-outline-danger btn-rounded waves-effect px-3"
+                                data-toggle="modal" data-target="#modalLoginForm">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+            }
         })
     </script>
 @endsection
