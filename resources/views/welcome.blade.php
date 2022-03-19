@@ -147,7 +147,7 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-md-12">
-                <div class="card card-image"
+                <div class="streak streak-md streak-photo"
                     style="background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/img%20%2832%29.webp);">
                     <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                         <div>
@@ -169,9 +169,6 @@
 
     </section>
     <!--Projects section v.4-->
-
-    
-
 
     <div class="container">
         <!--Section: Contact v.2-->
@@ -232,8 +229,7 @@
                             <div class="col-md-12">
 
                                 <div class="md-form">
-                                    <textarea type="text" id="message" name="message" rows="2"
-                                        class="form-control md-textarea"></textarea>
+                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
                                     <label for="message">Your message</label>
                                 </div>
 
@@ -272,73 +268,15 @@
         <!--Section: Contact v.2-->
     </div>
     <div id="map-container" class="z-depth-1-half map-container" style="height: 400px">
-        <iframe src="https://maps.google.com/maps?q=A.B.C. CASAS PREFABRICADAS&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
-          style="border:0" allowfullscreen></iframe>
+        <iframe src="https://maps.google.com/maps?q=A.B.C. CASAS PREFABRICADAS&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
-    <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
-            <!-- Grid row -->
-            <div class="row">
-                <!-- Grid column -->
-                <div class="col-md-6 mt-md-0 mt-3 px-5">
-                    <!-- Content -->
-                    <h5 class="text-uppercase">Footer Content</h5>
-                    <p>Construimos el lugar ideal para su hogar. Nuestras casas prefabricadas se incluye en el sector de fabricación de construcciones de módulos en concreto , a nivel nacional e internacional, con más de 15 años de antigüedad, siendo su actividad la fabricación y equipamiento de construcciones modulares de alta calidad.</p>
-                </div>
-                <!-- Grid column -->
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-        </div>
-        <!-- Footer Links -->
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
+@endsection
 
-    </footer>
-    <!-- Footer -->
+@section('css')
+    <style>
+        .streak.streak-photo {
+            background-attachment: fixed;
+        }
+    </style>
 @endsection

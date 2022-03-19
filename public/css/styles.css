@@ -28,3 +28,24 @@
   .pills-danger .nav-link {
     color: #da2017 !important;
   }
+
+  .bg-secondary {
+    background-color: #979694 !important;
+  }
+
+  .btn-secondary {
+    color: #fff;
+    background-color: #979694 !important;
+  }
+  .bg-danger {
+    background-color: #da2017 !important;
+  }
+
+  .btn-danger {
+    color: #fff;
+    background-color: #da2017 !important;
+  }
+
+  .text-danger {
+    color: #da2017;
+  }
