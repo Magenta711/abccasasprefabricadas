@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
 @section('content')
-    <section class="vh-100" style="background-color: #9A616D;">
+    <section class="vh-100" style="background: rgb(218,32,23);
+    background: linear-gradient(0deg, rgba(218,32,23,1) 0%, rgba(151,150,148,1) 100%);">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-xl-10">
@@ -54,7 +54,7 @@
                                         </div>
 
                                         <a class="small text-muted"
-                                            href="{{ __('Login') }}">{{ __('Forgot Your Password?') }}</a>
+                                            href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                                     </form>
 
                                 </div>

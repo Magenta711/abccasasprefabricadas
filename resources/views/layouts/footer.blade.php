@@ -1,4 +1,4 @@
-@if (!request()->is('home'))
+@if (!request()->is('home') && !request()->is('login') && !request()->is('password*'))
 <!-- Footer -->
 <footer class="page-footer font-small bg-dark pt-4">
     <!-- Footer Links -->
@@ -6,45 +6,21 @@
         <!-- Grid row -->
         <div class="row">
             <!-- Grid column -->
-            <div class="col-md-3 mt-md-0 mt-3 px-5">
+            <div class="col-md-4 mt-md-0 mt-3 px-5">
                 
                 <!-- Content -->
                 <h5 class="text-uppercase rojo-text">ABC CASAS PREFABRICADAS</h5>
                 <p>Construimos el lugar ideal para su hogar. Nuestras casas prefabricadas se incluye en el sector de fabricación de construcciones de módulos en concreto , a nivel nacional e internacional, con más de 15 años de antigüedad, siendo su actividad la fabricación y equipamiento de construcciones modulares de alta calidad.</p>
                 
-                <!-- Facebook -->    
-                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/abcpref/" class="btn-floating btn-lg btn-fb" target="_blank" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
                 <!-- Twitter -->
-                <a class="btn-floating btn-lg btn-ins" type="button" role="button"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=573135648863&text=Hola%2C%20quiero%20más%20información" target="_blank" class="btn-floating btn-lg btn-ins" type="button" role="button"><i class="fab fa-instagram"></i></a>
                 <!-- Google -->
                 <a class="btn-floating btn-lg btn-whatsapp" type="button" role="button"><i class="fab fa-whatsapp"></i></a>
                 <!-- Instagram -->
                 <a class="btn-floating btn-lg btn-email" type="button" role="button"><i class="fas fa-envelope"></i></a>
             </div>
-
-            {{-- <div class="col-md-3 mb-md-0 mb-3 text-center">
-                <!-- Links -->
-                <h5 class="text-uppercase rojo-text" >SÍGUENOS</h5>
-                <ul class="list-unstyled">
-                    <section class="mb-4">
-                        <!-- Facebook -->   
-                        <li>
-                        </li>  
-                        <li>
-
-                            
-                        </li>
-                        <li>
-
-                            
-                        </li>
-                        <li>
-
-                            
-                        </li>
-
-                    </section>
-            </div> --}}
             <!-- Grid column -->
             <!-- Grid column -->
             <div class="col-md-2 mb-md-0 mb-3">
@@ -72,13 +48,15 @@
                 <!-- Links -->
                 <h5 class="text-uppercase mb-4 rojo-text">PROYECTOS</h5>
                 <ul class="list-unstyled">
-                    @foreach ($projects as $item)
-                        @if (count($item->galleries) > 0)
-                        <li class="mb-2">
-                                <a href="/project/{{$item->id}}">{{$item->name_project}}</a>
-                            </li>
-                        @endif
-                    @endforeach
+                    @if (isset($projects))
+                        @foreach ($projects as $item)
+                            @if (count($item->galleries) > 0)
+                            <li class="mb-2">
+                                    <a href="/project/{{$item->id}}">{{$item->name_project}}</a>
+                                </li>
+                            @endif
+                        @endforeach
+                    @endif
                 </ul>
             </div>
             <!-- Grid column -->
@@ -91,17 +69,17 @@
                 <table class="table footer-table text-center text-white">
                   <tbody>
                     <tr>
-                      <td>Mon - Thu:</td>
-                      <td>8am - 9pm</td>
+                      <td>Lun - Vie:</td>
+                      <td>8am - 6pm</td>
                     </tr>
                     <tr>
-                      <td>Fri - Sat:</td>
-                      <td>8am - 1am</td>
+                      <td>Sabados:</td>
+                      <td>8am - 2pm</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                       <td>Sunday:</td>
                       <td>9am - 10pm</td>
-                    </tr>
+                    </tr> --}}
                   </tbody>
                 </table>
       
@@ -112,7 +90,7 @@
     </div>
     <!-- Footer Links -->
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">Copyright © 2022 | Abccasasprefabricadas | Hecho por Esteban Leal
+    <div class="footer-copyright text-center py-3">Copyright © 2022 | ABC casas prefabricadas | Hecho por Esteban Leal
     </div>
     <!-- Copyright -->
 

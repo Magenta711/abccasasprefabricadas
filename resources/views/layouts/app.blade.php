@@ -32,9 +32,9 @@
 <body>
     <div id="app">
         <!--Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5" id="navbar-example">
+        <nav class="navbar navbar-expand-lg navbar-light blue-grey lighten-5 fixed-top" id="navbar-example">
             <a class="navbar-brand" href="/">
-                <img src="{{ '/img/logo2.png' }}" height="30" alt="logo">
+                <img src="{{ '/img/logo2.png' }}" height="45" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
                 aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><h5>ABC Casas Prefabricadas</h5></li>
+                    <li class="nav-item"><h6>ABC CASAS PREFABRICADAS</h6></li>
                 </ul>
                 <ul class="navbar-nav ml-auto nav-flex-icons smooth-scroll">
                     <li class="nav-item">
@@ -50,18 +50,20 @@
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Proyectos
-                        </a>
-                        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                            @foreach ($projects as $item)
-                                @if (count($item->galleries) > 0)
-                                    <a class="dropdown-item" href="/project/{{$item->id}}">{{$item->name_project}}</a>
-                                @endif
-                            @endforeach
-                        </div>
-                    </li>
+                    @if (isset($projects))
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Proyectos
+                            </a>
+                            <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                                @foreach ($projects as $item)
+                                    @if (count($item->galleries) > 0)
+                                        <a class="dropdown-item" href="/project/{{$item->id}}">{{$item->name_project}}</a>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </li>
+                    @endif
                     @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('home')}}">Administrador</a>
@@ -92,6 +94,9 @@
             </div>
         </nav>
         <!--/.Navbar -->
+        <br>
+        <br>
+        <br>
         @yield('content')
 
         @include('layouts.modals.change_password')

@@ -14,10 +14,7 @@
 
             <!-- Section description -->
             <p class="text-center grey-text my-5 w-responsive mx-auto wow fadeIn" data-wow-delay="0.2s"
-                style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. Laborum quas, eos officia maiores ipsam ipsum dolores reiciendis ad
-                voluptas, animi obcaecati adipisci sapiente mollitia? Autem delectus quod accusamus tempora, aperiam minima
-                assumenda deleniti.</p>
+                style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Somos una empresa comprometida con el buen servicio  de la mano con la calidad y garantía que merece y requiere nuestros clientes. Nuestro personal tiene amplia experiencia en el mercado de la construcción del sistema modular prefabricado, dando así solución en la construcción bien sea para terraza o para terreno. Nos acomodamos a la necesidad y requerimiento del cliente.</p>
 
         </section>
         <!-- Section: Portfolio -->
@@ -41,6 +38,34 @@
         </div>
         <!-- Grid row -->
 
+    </div>
+    <div class="container">
+        <section id="portfolio" class="mb-3">
+
+            <!-- Section heading -->
+            <h3 class="text-center text-uppercase font-weight-bold mb-5 mt-5 pt-5 wow fadeIn" data-wow-delay="0.2s"
+                style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Misión</h3>
+
+            <!-- Section description -->
+            <p class="text-center grey-text my-5 w-responsive mx-auto wow fadeIn" data-wow-delay="0.2s"
+                style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Nuestra misión es dar a conocer lo ágil, económico y lo adaptable que es el sistema modular en prefabricado, llegar a todos los sectores donde se requiera la construcción en cualquier área, elaborando desde casetas pasando por casas, oficina y bodegas.</p>
+
+        </section>
+    </div>
+    <div class="container mb-5">
+        <section id="portfolio" class="mb-3">
+
+            <!-- Section heading -->
+            <h3 class="text-center text-uppercase font-weight-bold mb-5 mt-5 pt-5 wow fadeIn" data-wow-delay="0.2s"
+                style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Visión</h3>
+
+            <!-- Section description -->
+            <p class="text-center grey-text my-5 w-responsive mx-auto wow fadeIn" data-wow-delay="0.2s"
+                style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Ser una empresa reconocida del sector de la construcción, por la calidad de los productos y servicios que ofrecemos, además de la elaboración de paneles de concreto,de tal modo ofrecer un sistema de construcción implementando tecnologías y materiales que contribuyen de manera impactante en la solución de vivienda.
+            <br>
+                Posicionarnos en el mercado nacional e internacional dentro de los próximos 5 años como la empresa líder en la construcción de vivienda.</p>
+
+        </section>
     </div>
 @endsection
 

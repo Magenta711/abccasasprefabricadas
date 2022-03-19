@@ -1,3 +1,14 @@
+
+@php
+    function firtsProject($projects)
+    {
+        foreach ($projects as $key => $value) {
+            if (count($value->galleries) > 0) {
+                return $value->id;
+            }
+        }
+    }
+@endphp
 @extends('layouts.app')
 
 @section('content')
@@ -13,9 +24,9 @@
         <!--Slides-->
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <div class="view">
-                    <img class="d-block w-100" src="{{ asset('img/slider/805.jpg') }}"
-                        alt="First slide">
+                <div class="view" style="height: 720px;">
+                    <img class="d-block w-100 h-100" src="{{ asset('img/slider/805.jpg') }}"
+                        alt="First slide" style="position: absolute;object-fit:cover;top: 0;left: 0;min-height: 720px;">
                     <div class="mask rgba-black-light"></div>
                 </div>
                 <div class="carousel-caption">
@@ -25,22 +36,22 @@
             </div>
             <div class="carousel-item">
                 <!--Mask color-->
-                <div class="view">
-                    <img class="d-block w-100" src="{{ asset('img/slider/806.jpg') }}"
-                        alt="Second slide">
+                <div class="view" style="height: 720px;">
+                    <img class="d-block w-100 h-100" src="{{ asset('img/slider/806.jpg') }}"
+                        alt="Second slide" style="position: absolute;object-fit:cover;top: 0;left: 0;min-height: 720px;">
                     <div class="mask rgba-black-light"></div>
                 </div>
                 <div class="carousel-caption">
                     <h3 class="h3-responsive">VISITA NUESTROS PROYECTOS</h3>
-                    <a type="button" class="btn btn-danger" href="#">PROYECTOS</a>
+                    <a type="button" class="btn btn-danger" href="/project/{{firtsProject($projects)}}">PROYECTOS</a>
                     
                 </div>
             </div>
             <div class="carousel-item">
                 <!--Mask color-->
-                <div class="view">
-                    <img class="d-block w-100" src="{{ asset('img/slider/808.jpg') }}"
-                        alt="Third slide">
+                <div class="view" style="height: 720px;">
+                    <img class="d-block w-100 h-100" src="{{ asset('img/slider/808.jpg') }}"
+                        alt="Third slide" style="position: absolute;object-fit:cover;top: 0;left: 0;min-height: 720px;">
                     <div class="mask rgba-black-light"></div>
                 </div>
                 <div class="carousel-caption">
@@ -66,10 +77,12 @@
 
     <div class="container">
 
+
+
         {{-- Section: about --}}
         <section id="about" class="my-5">
 
-            <h3 class="h3 text-center mb-5 rojo-text">¿QUIÉNES SOMOS?</h3>
+            <h3 class="h3 text-center mb-5 rojo-text">LO QUE HACEMOS</h3>
 
             <!--Grid row-->
             <div class="row wow fadeIn">
@@ -128,8 +141,7 @@
 
                     <p class="h5 text-center mb-4 grey-text">A.B.C CASAS PREFABRICADAS</p>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://vimeo.com/234963159?embedded=true&amp;source=video_title&amp;owner=71302726"
-                            allowfullscreen=""></iframe>
+                        <iframe title="vimeo-player" src="https://player.vimeo.com/video/234963159?h=7cb27f9393" width="640" height="375" frameborder="0" allowfullscreen></iframe>
                     </div>
                     
                 </div>
@@ -145,7 +157,7 @@
     <section>
 
         <!--Grid row-->
-        <div class="row">
+        <div class="row mx-0">
             <!--Grid column-->
             <div class="col-md-12">
                 <div class="streak streak-md streak-photo"
@@ -155,7 +167,7 @@
                             <h5 class="dark-text"><i class="fas fa-house-chimney"></i><strong> Creamos tu hogar ideal</strong></h6>
                             <h3 class="card-title py-3 font-weight-bold rojo-text"><strong>"Brindamos bienestar y calidad a nuestros clientes más allá de sus expectativas"</strong></h3>
                             <p class="pb-3">Nuestras casas nos acreditan como los mejores en la construcción modular del sector. Diseños únicos al igual de hermosos, cada una de nuestras casas está pensada para que se acomoden a las necesidades y exigencias de nuestros clientes. </p>
-                            <a class="btn btn-outline-white btn-rounded "><i class="far fa-clone left"></i> MIRA NUESTROS PROYECTOS</a>
+                            <a href="/project/{{firtsProject($projects)}}" class="btn btn-outline-white btn-rounded "><i class="far fa-clone left"></i> MIRA NUESTROS PROYECTOS</a>
                         </div>
                     </div>
                 </div>
