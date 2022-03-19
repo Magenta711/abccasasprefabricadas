@@ -19,8 +19,8 @@
                     <div class="mask rgba-black-light"></div>
                 </div>
                 <div class="carousel-caption">
-                    <h3 class="h3-responsive">Light mask</h3>
-                    <p>First text</p>
+                    <h3 class="h3-responsive">BIENVENIDOS A ABC CASAS PREFABRICADAS</h3>
+                    <a type="button" class="btn btn-danger" href="#contact">CONTÁCTANOS</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -28,23 +28,25 @@
                 <div class="view">
                     <img class="d-block w-100" src="{{ asset('img/slider/806.jpg') }}"
                         alt="Second slide">
-                    <div class="mask rgba-black-strong"></div>
+                    <div class="mask rgba-black-light"></div>
                 </div>
                 <div class="carousel-caption">
-                    <h3 class="h3-responsive">Strong mask</h3>
-                    <p>Secondary text</p>
+                    <h3 class="h3-responsive">VISITA NUESTROS PROYECTOS</h3>
+                    <a type="button" class="btn btn-danger" href="#">PROYECTOS</a>
+                    
                 </div>
             </div>
             <div class="carousel-item">
                 <!--Mask color-->
                 <div class="view">
-                    <img class="d-block w-100" src="{{ asset('img/slider/807.jpg') }}"
+                    <img class="d-block w-100" src="{{ asset('img/slider/808.jpg') }}"
                         alt="Third slide">
-                    <div class="mask rgba-black-slight"></div>
+                    <div class="mask rgba-black-light"></div>
                 </div>
                 <div class="carousel-caption">
-                    <h3 class="h3-responsive">Slight mask</h3>
-                    <p>Third text</p>
+                    <h3 class="h3-responsive">COTIZA TU NUEVO HOGAR</h3>
+                    <a type="button" class="btn btn-danger" href="#contact">COTIZACIÓN</a>
+                    
                 </div>
             </div>
         </div>
@@ -67,7 +69,7 @@
         {{-- Section: about --}}
         <section id="about" class="my-5">
 
-            <h3 class="h3 text-center mb-5 rojo-text">¿QUIENES SOMOS?</h3>
+            <h3 class="h3 text-center mb-5 rojo-text">¿QUIÉNES SOMOS?</h3>
 
             <!--Grid row-->
             <div class="row wow fadeIn">
@@ -124,7 +126,7 @@
                 <!--Grid column-->
                 <div class="col-lg-6 col-md-12">
 
-                    <p class="h5 text-center mb-4 rojo-text">A.B.C CASAS PREFABRICADAS</p>
+                    <p class="h5 text-center mb-4 grey-text">A.B.C CASAS PREFABRICADAS</p>
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="https://vimeo.com/234963159?embedded=true&amp;source=video_title&amp;owner=71302726"
                             allowfullscreen=""></iframe>
@@ -146,14 +148,14 @@
         <div class="row">
             <!--Grid column-->
             <div class="col-md-12">
-                <div class="card card-image"
+                <div class="streak streak-md streak-photo"
                     style="background-image: url({{asset('/img/slider/807.jpg')}}); background-size: cover; background-repeat: no-repeat;">
                     <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                         <div>
                             <h5 class="dark-text"><i class="fas fa-house-chimney"></i><strong> Creamos tu hogar ideal</strong></h6>
                             <h3 class="card-title py-3 font-weight-bold rojo-text"><strong>"Brindamos bienestar y calidad a nuestros clientes más allá de sus expectativas"</strong></h3>
                             <p class="pb-3">Nuestras casas nos acreditan como los mejores en la construcción modular del sector. Diseños únicos al igual de hermosos, cada una de nuestras casas está pensada para que se acomoden a las necesidades y exigencias de nuestros clientes. </p>
-                            <a class="btn btn-outline-white btn-rounded "><i class="far fa-clone left"></i> MIRA NUESTRA GALERÍA</a>
+                            <a class="btn btn-outline-white btn-rounded "><i class="far fa-clone left"></i> MIRA NUESTROS PROYECTOS</a>
                         </div>
                     </div>
                 </div>
@@ -170,7 +172,7 @@
 
     <div class="container">
         <!--Section: Contact v.2-->
-        <section class="mb-4">
+        <section class="mb-4" id="contact">
 
         <div class="mt-5 text-center"">
             <img  src="{{ asset('img/logo.png') }}" alt="">
@@ -195,7 +197,7 @@
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input type="text" id="name" name="name" class="form-control">
-                                    <label for="name" class="">Your name</label>
+                                    <label for="name" class="">Nombre</label>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -204,7 +206,7 @@
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
                                     <input type="text" id="email" name="email" class="form-control">
-                                    <label for="email" class="">Your email</label>
+                                    <label for="email" class="">Correo electronico</label>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -213,14 +215,6 @@
                         <!--Grid row-->
 
                         <!--Grid row-->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form mb-0">
-                                    <input type="text" id="subject" name="subject" class="form-control">
-                                    <label for="subject" class="">Subject</label>
-                                </div>
-                            </div>
-                        </div>
                         <!--Grid row-->
 
                         <!--Grid row-->
@@ -230,9 +224,9 @@
                             <div class="col-md-12">
 
                                 <div class="md-form">
-                                    <textarea type="text" id="message" name="message" rows="2"
+                                    <textarea type="text" id="message" name="message" rows="4"
                                         class="form-control md-textarea"></textarea>
-                                    <label for="message">Your message</label>
+                                    <label for="message">Mensaje</label>
                                 </div>
 
                             </div>
@@ -242,7 +236,7 @@
                     </form>
 
                     <div class="text-center text-md-left">
-                        <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                        <a class="btn btn-danger" onclick="document.getElementById('contact-form').submit();">Enviar</a>
                     </div>
                     <div class="status"></div>
                 </div>
@@ -268,75 +262,17 @@
             </div>
         </section>
         <!--Section: Contact v.2-->
-    </div>
-    <div id="map-container" class="z-depth-1-half map-container" style="height: 400px">
-        <iframe src="https://maps.google.com/maps?q=A.B.C. CASAS PREFABRICADAS&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
+        <div id="map-container" class="z-depth-1-half map-container my-5" style="height: 400px">
+            <iframe src="https://maps.google.com/maps?q=A.B.C. CASAS PREFABRICADAS&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0"
           style="border:0" allowfullscreen></iframe>
+        </div>
     </div>
-    <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
-            <!-- Grid row -->
-            <div class="row">
-                <!-- Grid column -->
-                <div class="col-md-6 mt-md-0 mt-3 px-5">
-                    <!-- Content -->
-                    <h5 class="text-uppercase">Footer Content</h5>
-                    <p>Construimos el lugar ideal para su hogar. Nuestras casas prefabricadas se incluye en el sector de fabricación de construcciones de módulos en concreto , a nivel nacional e internacional, con más de 15 años de antigüedad, siendo su actividad la fabricación y equipamiento de construcciones modulares de alta calidad.</p>
-                </div>
-                <!-- Grid column -->
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-        </div>
-        <!-- Footer Links -->
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
+@endsection
 
-    </footer>
-    <!-- Footer -->
+@section('css')
+    <style>
+        .streak.streak-photo {
+            background-attachment: fixed;
+        }
+    </style>
 @endsection

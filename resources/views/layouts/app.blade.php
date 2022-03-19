@@ -8,6 +8,7 @@
 
 <head>
     <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -80,6 +81,10 @@
         </nav>
         <!--/.Navbar -->
         @yield('content')
+        @yield('js')
+        <!-- Footer -->
+        @include('layouts.footer')
+        <!-- Footer -->
 
         @include('layouts.modals.change_password')
     </div>
@@ -87,7 +92,6 @@
     <script type="text/javascript" src="{{ asset('assets/mdbootstrap-4.20/js/popper.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/mdbootstrap-4.20/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/mdbootstrap-4.20/js/mdb.min.js') }}"></script>
-    @yield('js')
 </body>
 
 </html>
